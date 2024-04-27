@@ -1,0 +1,367 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changer de système d'exploitation</title>
+    <link rel="icon" type="image/x-icon" href="https://productionstage-hostingstack-serverbucket50ee8d24-18stefou6iti3.s3.amazonaws.com/changeos/android-chrome-512x512.png?AWSAccessKeyId=ASIAZDCUMOBD2J2OZZ56&Signature=NWMgDjKFSPbg0SQSReTamioot%2BA%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEHQaCXVzLWVhc3QtMSJHMEUCIQCstmz6k6Ylle2ywUJAx1dhzCh8yOYJSkDUInURyb3dowIgDSN34Y59H4g%2F%2BUwZB8306eK3u6Ip4G4fk4PtE8RQxE0qiwMIvf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARACGgw2MjUwOTQ3MTc1MTEiDB84bi9FfjkJZ0oy1SrfAsO3R12ocJYj7lNubLs73NHK%2FxB2vReKWExw1KGmG0HAXKfjmRkIkIbu7dS2xG1FeGeoCANwufQrldTfCowxzj9fqvAYzKOxd%2FfhsQh63uZODtAOUtmzIVNYyb1Yk8TaruWvKkcdBEQKKN%2FV0y%2FHIdyc1UKsyqDbF36zcBRFefjqdTXVcrW5uA7bA04%2BdKqz41qJc4cnTnuUjzjolJJYEwLUwHhJTWYwR1Psw0yBQGIVe7r5eMze2PjPxPa6wwhH4J6OrWPZTOC0vAeMspalQYo6YiTSmZxTVb2lXjsSq25mx5%2Fg6j6EKYIA0AU5uNvApOGq93NC1pypfo7t74y04ZXMJcaV5xGBAat80HzrRXx5SOjIJcBTy%2BBl6Tw9lUsmbX9s34NT6OQfjKmD7wpvOQksCnP5ch%2FLuwbAWhyNx3k8n0pnggooqevbC9RREaVgNWfvM3s5IYxiaE2%2FlO9BIjDKpa6xBjqeAdZEVXJ0TQI9GSDIJRUoh4EPRnQdtRtNWltNsjPO%2B9X0gVwhfTYOdqOdRvH%2B7kTxijzR1va8sThDBLsRKPbrqOhe7%2FW%2FNMysgGLt2JL3uOpJWMCmVWLUf%2B9YcmX5xCZxiuN1nZ1xnVjFqhUHF2gjHDc1lxl%2FD3E7jU932cX9tc598X%2FOxcrVkfBytvrOu8LpMX0Z9vOL20JK6hEbq9IH&Expires=1714137716">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA8QMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAADAAECBAf/xAAZEAEBAQEBAQAAAAAAAAAAAAAAEhEBAmH/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBQT/xAAZEQEBAQEBAQAAAAAAAAAAAAAAEhEBAhP/2gAMAwEAAhEDEQA/APl3OO+eXXPLvnl9LyO9cc8u+eXfPLrnkc++nPPLZd88usaZ76cYsd43BnXGLHeLA1xix3iwNcYsd4sDXGLHeLA1xix3iwTXGLHeLA1xix3iwXR4sJjMDXGOe8LjO+Reeg98ue+T98ue8Rrnp5++Wd8n7544xG+ehY0koXXXOO+eXXOO+eRy76cc8u+eXfOOucac++nGLCYpGdcYsJKkNcSsJikTR4sJKkNHKkmLA0eKSYsDXGMwmLBNcYzCYpF0eLCSzA1xjJJiwNHLJLKwXRd8ue+TYpFp5++XHfL0d4575GuegY0sJGqdc8u+eXfPLrnkce+nPPLcJLZVih4pJLZE0eNl3KwTXGLCSpDXEqXfPLZDR4sJKlUoeLCyyAoeLCSpChYpJiwXR4sJKkNHil3iwNHLJLikXRSpLixDQd8ue+Xolx3yLz0GUWUNUTnl1zy655d88o499DlvPJJbzis0KW88kluCUOVJJUhQ5bJJXPIlDluElvPIlClsklsqUKVJZUiUGVJZXfIuilnfJZZiFDlkllSLQpUllSFClSSVIujlSSVgaKXHfL0S575F56DKLKFp3zy655d88upTXHvoeNkkqVTXEqSSpEoctkktkShS2SS2RKFzy2SSpDXHONl3Kk1NcSyS4p4GilkmlmGlClnfJZUi6KVJZUmlBlSWVItClSWVIUGVJcWBQsZ3yaWd8pq0CPjS4jWqdc8upJzjcZcO+hy3nl3znxuCUOWy7xvOCUPFJJbi6UOVJJUmlD55bLvG4mpQ8UkluBQ5UkxSupQ5Z3yXGYatDlmGxYmlBlSWWSaUOVJJUmrQ5UklSaUOWSWVJpopZ3yWVKaUGUXGrq03nl1zy75x1zyxrn30OVzwWVzhrNDlc8klsmpQ5WElSaaPFJJbziUaOVJMbhpopUkxuLRopbJMWFJopUlxYmlClSTFJpQ5ZJpWGlBlSWVJq0KVJJUlGjlkllSUaKVJYZJS6OU7lJRTrnHXOOueXXOMU5964xvPLvG84lM6OW47xSUa4lYSVJSaPFhJUlGjxc4XnlSlGjxYSVJSaPFhMbJRosWFlSlFClYWVJRQsUllmFGjlnfJpZ3ylLopUlxYUaKWYbFKUUGVJZZ3hS6LETEWa655dc8uucd8452596OVJZUpbNDlYWVBZQ8UllspaUKVJpUn0Sgw2DSpLKDDJPLJT6FBhsmlSllBlSeVJ9EoEqTSpPoUGVJpUpa0GVJpUn0KBKk0qU+hQe+WSaVKfQoMs75NLnvlPqtClpJR9VpvOcdc4kmsddc43GJWXXOLEkRuLOJAs43nOJCLOLONQMzizjUiLFjUgsWJHRmLGpBjM41IMSSKzrOpM9ExJFZ1nUmO9aYkjVf/2Q=='); /* Lien vers le GIF */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+        }
+
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+            margin-top: 50px; 
+
+        .overlay h1 {
+            color: #218b0b; 
+            margin-top: 0; 
+        }
+
+        .overlay p {
+            color: #000; /* Couleur du texte */
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type=text] {
+            padding: 10px;
+            margin-right: 10px;
+            border: solid 1px #ccc;
+            border-radius: 4px;
+        }
+
+        .search-container button[type=button] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-container button[type=button]:hover {
+            background-color: #45a049;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        .no-results {
+            font-style: italic;
+            color: #888;
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* Adjustments for mobile devices */
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+        </style>
+          <style>
+            /* Styles de base pour le texte */
+            .animated-text {
+                font-size: 18px;
+                font-weight: bold;
+                color: black; /* Couleur initiale */
+            }
+    
+            /* Animation */
+            @keyframes changeColor {
+                0%, 100% {
+                    color: black; /* Noir au début et à la fin */
+                }
+                50% {
+                    color: green; /* Vert au milieu */
+                }
+            }
+    
+            /* Appliquer l'animation */
+            .animated-text {
+                animation-name: changeColor;
+                animation-duration: 2s; /* Durée de l'animation */
+                animation-iteration-count: infinite; /* Répétition infinie */
+            }
+        </style>
+</head>
+<body>
+    <div class="overlay">
+        <p>START<span class="animated-text">CHANGE YOUR OS</span>.</p>
+        <p>Voici ce dont vous aurez besoin :</p>
+        <ol>
+            <li>Une clé USB ou un DVD</li>
+            <li>Un chargeur de démarrage (quelque chose de similaire à Rufus)</li>
+            <li>Un système d'exploitation compatible (comme Ubuntu, Fedora ou Arch Linux)</li>
+        </ol>
+        <h2>why<span class="animated-text">CHANGE OS</span>.</h2>
+        <ol>
+            <li>pour booster votre pc</li>
+            <li>utiliser <a href="https://azure.microsoft.com/fr-ca">microsoft azure</a>(accesible uniquement pour ubuntu 16,04 et utérieure)</li>
+            <li>avoir une scurité contre les virus informatique(condition:avoir un logiciel antivirus comme avast et mettre régulièremtn le os a jour)</li>
+            <li>pouvoir utiliser des .exe et d'atres formats de fichier </li>
+        <div class="download-buttons">
+            <button onclick="window.location.href='https://ubuntu.com/download/desktop/thank-you?version=22.04.4&architecture=amd64';">Télécharger Ubuntu 22.04 LTS</button>
+            <button onclick="window.location.href ='http://centos.mirror.rafal.ca/8-stream/isos/x86_64/CentOS-Stream-8-x86_64-latest-dvd1.iso';">Télécharger la dernière version de CentOS</button>
+            <button onclick="window.location.href ='https://www.linux.org/pages/download/';">Pour plus de versions de Linux</button>
+            <button onclick="window.location.href='https://cdimage.ubuntu.com/kubuntu/releases/23.10/release/kubuntu-23.10-desktop-amd64.iso'">kubuntu</button>
+            <button onclick="window.location.href"='https://arch.mirror.winslow.cloud/iso/2024.04.01/archlinux-2024.04.01-x86_64.iso>arch linux</button>
+            <button onclick="window.location.href"='https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.5.0-amd64-DVD-1.iso'>debian</button>
+            <button onclick="window.location.href"='https://mirrors.slackware.com/slackware/slackware-iso/slackware64-15.0-iso/slackware64-15.0-install-dvd.iso'>slackware</button>
+            <button onckick="window.location.href"='https://mirror.csclub.uwaterloo.ca/linuxmint/stable/21.3/linuxmint-21.3-cinnamon-64bit-edge.iso>mint os</button>'
+            <button onclick="window.location.href"='https://torrent.ubuntu.com/xubuntu/releases/mantic/release/desktop/xubuntu-23.10-desktop-amd64.iso.torrent'>xubuntu</button>
+            <button onclick="window.location.href"='https://get.opensuse.org/tumbleweed/?type=desktop#download'>opensuse</button>
+            <button onclick="window.location.href"='https://download.fedoraproject.org/pub/fedora/linux/releases/39/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-39-1.5.iso'>fedora</button>
+            <button onclick="window.location.href"='https://github.com/manjaro-arm/generic-images/releases/download/23.02/Manjaro-ARM-sway-generic-23.02.img.xz'>MANJARO</button>
+            <button onclick="window.location.href"='https://zorin.com/os/download/17/core/'>zorin os</button>
+            <button onclick="window.location.href"='https://nyc3.dl.elementary.io/download/MTcxMzQ0NDc5Ng==/elementaryos-7.1-stable.20230926rc.iso'>elementary os</button>
+        </div>
+        
+        <h2>ATTENTION</h2>
+        <p>Certains systèmes d'exploitation ne sont pas open source et nécessitent des clés d'activation pour être utilisés. D'autres peuvent ne pas être compatibles avec votre système (par exemple, Mac OS). Certains systèmes d'exploitation peuvent collecter des informations vous concernant (comme Windows et Mac OS) ou accéder à certaines parties de votre ordinateur (par exemple, la mémoire si vous avez un disque dur).</p>
+
+        <style>
+            .gradient-text {
+                font-size: 36px; /* ajustez la taille du texte selon vos besoins */
+                background-image: linear-gradient(to right, black, green); /* dégradé de couleur de noir à vert */
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent; /* rend le texte transparent */
+                mix-blend-mode: multiply; /* mélange le dégradé avec le texte */
+            }
+            </style>
+            </head>
+            <body>
+            
+           
+            
+        <h2>Les étapes à suivre</h2>
+        <ol>
+            <li>Télécharger un OS et le chargeur de démarrage</li>
+            <li>Connecter votre clé USB à votre ordinateur</li>
+            <li>Ouvrir votre chargeur de démarrage et sélectionner votre OS et votre clé USB</li>
+            <li>Redémarrer votre ordinateur. Si Windows démarre, définissez la clé USB en tant que première option de démarrage. Pour ce faire, redémarrez votre ordinateur, puis lorsque vous verrez le logo de la marque de votre ordinateur, appuyez sur la touche <kbd>Esc</kbd> ou <kbd>F12</kbd>.</li>
+            <li>quand vous serez rendu sur le boot menu ,vous devez aller dan la section <kbd>boot</kbd> ou <kbd> boot option</kbd></li>
+            <li>vous chercher votre clé usb et mettez la en premier</li>
+            <li> assurez vous que le bitlocker out toute autre forme de verrouillage soit désactivé</li>
+            <li>il est possible que l'écran s'affiche dans le mauvais sens</li>
+            <li>vous devez aller dans paramètre</li>
+            <li><kbd>graphics</kbd></li>
+            <li>puis changer l'orientation our le bons sens de votre écran</li>
+        </ol>
+        <p>suivez moi sur ces réseau</p>
+        <a href="https://github.com/Underground5506">github</a><hr>
+        <a href="https://www.twitch.tv/rtxclouder">twtich</a><hr>
+        <a href="https://account.xbox.com/fr-CA/Profile?xr=mebarnav&csrf=UVufE5L9NzeiRO-eA390cAvTgVme2HumRggZl1-Mu77b31TwZlVAATBsMBK1mXWzSaYgR1uhrEOnIa-LreM6-BSp1uw1&wa=wsignin1.0">xbox</a><hr>
+        <a href="mailto:ayoubchab2010@gmail.com?subject=changements ou bug du site&body=%20%20%20**%5BNom%20de%20l%27entreprise%20ou%20du%20d%C3%A9veloppeur%5D**%0A%20%20%20**%5BAdresse%20email%5D**%0A%20%20%20**%5BVotre%20nom%5D**%0A%20%20%20**%5BVotre%20adresse%20email%5D**%0A%20%20%20**Date%20:**%202024-04-24%0A%20%20%20**Corps%20du%20message%20:**%20Bonjour%2C%20Je%20vous%20contacte%20aujourd%27hui%20pour%20signaler%20un%20bug%20que%20j%27ai%20rencontr%C3%A9%20lors%20de%20l%27utilisation%20de%20%5Bnom%20du%20produit%20ou%20du%20service%5D.%0A%20%20%20**Description%20du%20bug%20:**%20*%0A%20%20%20**%C3%89tapes%20pour%20reproduire%20le%20bug%20:**%20%5BD%C3%A9crivez%20les%20%C3%A9tapes%20pr%C3%A9cises%20n%C3%A9cessaires%20pour%20reproduire%20le%20bug.%5D%20*%0A%20%20%20**Comportement%20attendu%20:**%20%5BD%C3%A9crivez%20ce%20que%20vous%20attendiez%20que%20le%20produit%20ou%20le%20service%20fasse.%5D%20*%0A%20%20%20**Comportement%20observ%C3%A9%20:**%20%5BD%C3%A9crivez%20ce%20qui%20s%27est%20r%C3%A9ellement%20pass%C3%A9.%5D%20*%0A%20%20%20**Impact%20du%20bug%20:**%20%5BD%C3%A9crivez%20l%27impact%20du%20bug%20sur%20votre%20utilisation%20du%20produit%20ou%20du%20service.%5D%0A%20%20%20**Informations%20suppl%C3%A9mentaires%20:**%20*%0A%20%20%20**Version%20du%20produit%20ou%20du%20service%20:**%20%5BIndiquez%20la%20version%20du%20produit%20ou%20du%20service%20que%20vous%20utilisez.%5D%20*%0A%20%20%20**Syst%C3%A8me%20d%27exploitation%20:**%20%5BIndiquez%20le%20syst%C3%A8me%20d%27exploitation%20que%20vous%20utilisez.%5D%20*%0A%20%20%20**Navigateur%20web%20:**%20%5BIndiquez%20le%20navigateur%20web%20que%20vous%20utilisez%20%28si%20applicable%29.%5D%0A%20%20%20**Pi%C3%A8ces%20jointes%20:**%20*%0A%20%20%20%5BVous%20pouvez%20joindre%20des%20captures%20d%27%C3%A9cran%20ou%20d%27autres%20fichiers%20pertinents%20pour%20illustrer%20le%20bug.%5D%20Je%20vous%20remercie%20de%20votre%20temps%20et%20de%20votre%20attention%20%C3%A0%20ce%20probl%C3%A8me.%20J%27esp%C3%A8re%20que%20vous%20pourrez%20corriger%20ce%20bug%20dans%20les%20meilleurs%20d%C3%A9lais.%20**Cordialement%2C**%20**%5BVotre%20nom%5D**%20**%5BVotre%20signature%5D**%20**%5BVos%20coordonn%C3%A9es%5D**%20**Conseils%20suppl%C3%A9mentaires%20:**%20*%20Soyez%20clair%20et%20concis%20dans%20votre%20description%20du%20bug.%20*%20Fournissez%20autant%20d%27informations%20que%20possible%20pour%20aider%20les%20d%C3%A9veloppeurs%20%C3%A0%20reproduire%20le%20bug.%20*%20Soyez%20poli%20et%20professionnel%20dans%20votre%20communication.%20*%20Si%20possible%2C%20incluez%20des%20captures%20d%27%C3%A9cran%20ou%20d%27autres%20fichiers%20pertinents%20pour%20illustrer%20le%20bug.%20*%20Remerciez%20les%20d%C3%A9veloppeurs%20pour%20leur%20temps%20et%20leur%20attention.%20J%27esp%C3%A8re%20que%20ces%20informations%20vous%20aideront%20%C3%A0%20r%C3%A9diger%20un%20e-mail%20efficace%20pour%20signaler%20un%20bug.%20N%27h%C3%A9sitez%20pas%20%C3%A0%20me%20contacter%20si%20vous%20avez%20d%27autres%20questions.">Envoyer un email</a>
+
+
+        <hr>
+        <div class="search-container">
+            <form id="searchForm">
+                <input type="text" id="searchInputName" placeholder="ENTREZ LE NOM DU SYSTÈME D'EXPLOITATION QUE VOUS SOUHAITEZ">
+                <input type="text" id="searchInputCategory" placeholder="ENTREZ LES CARACTÉRISTIQUES DE VOTRE ORDINATEUR">
+                <button type="button" id="searchButton">Rechercher</button>
+            </form>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const data = [
+            { name: "Ubuntu 22.04 LTS", category: "Processeur double cœur 2 GHz, 4 Go de RAM, 25 Go d'espace disque" },
+            { name: "Kubuntu", category: "Processeur Pentium 233 MHz, 4 Go d'espace disque, 128 Mo de RAM, ou 2 Go de RAM, 25 Go d'espace disque" },
+            { name: "CentOS", category: "2 Go de RAM, 10 Go d'espace disque" },
+            { name: "Arch Linux", category: "Processeur 64 bits, 512 Mo de RAM, 1 Go d'espace disque" },
+            { name: "Playtron", category: "SYSTEME D'EXPLOITATION NON ENCORE PUBLIÉ" },
+            { name: "Debian", category: "1 Go de RAM, 10 Go d'espace disque" },
+            { name: "Slackware", category: "Processeur 486, 64 Mo de RAM, 10 Go d'espace disque" },
+            { name: "Mint", category: "1 Go de RAM, 20 Go d'espace disque" },
+            { name: "Xubuntu", category: "1 Go de RAM, 8,6 Go d'espace disque" },
+            { name: "OpenSUSE", category: "Processeur Pentium 4 1,6 GHz ou supérieur, 1 Go de RAM, 10 Go d'espace disque" },
+            { name: "Fedora", category: "Processeur 1 GHz ou plus rapide, 1 Go de mémoire système, 10 Go d'espace disque non alloué" },
+            { name: "Manjaro", category: "Processeur 1 GHz, 1 Go de RAM, 30 Go d'espace disque" },
+            { name: "Zorin OS", category: "Core unique de 700 MHz, 512 Mo de RAM, 8 Go d'espace disque" },
+            { name: "Elementary OS", category: "Processeur Intel i3 ou équivalent double cœur 64 bits, 4 Go de mémoire système, 15 Go de stockage" },
+            { name: "Steam OS", category: "work only in steamdeck" }
+        ];
+
+        document.getElementById("searchButton").addEventListener("click", function () {
+            const searchName = document.getElementById("searchInputName").value.toLowerCase();
+            const searchCategory = document.getElementById("searchInputCategory").value.toLowerCase();
+
+            const filteredResults = data.filter(item =>
+                item.name.toLowerCase().includes(searchName) &&
+                item.category.toLowerCase().includes(searchCategory)
+            );
+
+            const resultsContainer = document.getElementById("results");
+            resultsContainer.innerHTML = "";
+
+            filteredResults.forEach(result => {
+                const resultElement = document.createElement("p");
+                resultElement.textContent = `${result.name} (${result.category})`;
+                resultsContainer.appendChild(resultElement);
+            });
+
+            if (filteredResults.length === 0) {
+                const noResultsElement = document.createElement("p");
+                noResultsElement.className = "no-results";
+                noResultsElement.textContent = "AUCUN RÉSULTAT";
+                resultsContainer.appendChild(noResultsElement);
+            }
+
+            resultsContainer.scrollIntoView({behavior: "smooth"});
+        });
+    </script>
+     <p>
+
+
+
+
+
+    
+     </p>
+     
+     <table style=opacity: 0.8;>
+         <th>os</th>
+         <th>avantages</th>
+         <th>inconvénients</th>
+         <th>taille en GB</th>
+     </tr>
+     <tr>
+         <td>ubuntu 22,04</td>
+         <td>performance, travail avec certains windows 1998 et nouveaux</td>
+         <td>possible de perdre des données si modificate grub.cfg</td>
+         <td>2GB a 25GB</td>
+     </tr>
+     <tr>
+         <td>kubuntu</td>
+         <td>travailler avec un ordinateur faible</td>
+         <td>besoin d'être programmeur ou peut programmer</td>
+         <td>12GB</td>
+     </tr>
+     <tr>
+         <td>centos</td>
+         <td>même que kubuntu</td>
+         <td>la mise à jour ne peut pas être faite automatiquement</td>
+         <td>16GB</td>
+     </tr>
+     <tr>
+         <td>arch linux</td>
+         <td>n'a pas besoin de tant de ram et de mémoire</td>
+         <td>il est impossible de mettre à jour </td>
+         <td>1GB</td>
+     </tr>
+     <tr>
+         <td>playtron</td>
+         <td>aucune spécification n'a été publiée</td>
+         <td>aucune spécification n'a été publiée</td>
+         <td>le os est a venir</td>
+     </tr>
+     <tr>
+         <td>debian</td>
+         <td>tous les cpu fonctionnent avec lui</td>
+         <td>pas de magasin d'applications</td>
+         <td>10GB</td>
+     </tr>
+     <tr>
+         <td>slackware</td>
+         <td>travailler avec un ordinateur plus ancien</td>
+         <td>aucune application n'est intégrée</td>
+         <td>10GB</td>
+     </tr>
+     <tr>
+         <td>mint</td>
+         <td>système d'exploitation léger</td>
+         <td>ne fonctionne pas avec TMP et le démarrage sécurisé</td>
+         <td>20GB</td>
+     </tr>
+     <tr>
+         <td>xubuntu</td>
+         <td>peut être utilisé dans certains disques et clés usb</td>
+         <td>besoin de formater le stockage ext 4 (ne fonctionne pas avec windows)</td>
+         <td>8,6GB</td>
+     </tr>
+     <tr>
+         <td>opensuse</td>
+         <td>travailler avec un écran tactile</td>
+         <td>ne peut pas être réduite</td>
+         <td>10GB</td>
+     </tr>
+     <tr>
+         <td>fedora</td>
+         <td>aucun modèle minimal de cpu</td>
+         <td>ne peut pas supprimer certains autres os dans l'ordinateur</td>
+         <td>10GB</td>
+     </tr>
+     <tr>
+         <td>manjaro</td>
+         <td>nécessite seulement 1 Go de RAM</td>
+         <td>besoin de 30 Go de mémoire</td>
+         <td>30GB</td>
+     </tr>
+     <tr>
+         <td>zorin os</td>
+         <td>fonctionne avec un seul noyau</td>
+         <td>fonctionne en architecture 32 bits</td>
+         <td>8gb</td>
+     </tr>
+     <tr>
+         <td>elementary os</td>
+         <td>travaille avec la mémoire minimale de windows 10</td>
+         <td>besoin d'un minimum de intel core I3</td>
+         <td>15GB</td>
+     </tr>
+     </table>
+     
+            
+     
+     <script>
+alert ("if you found any error this is not my problem");
+alert ("centos is an os of the project of centos " );
+alert ("ubuntu is a propriety of canocial");
+alert ("and the other bla bla");
+</script>
